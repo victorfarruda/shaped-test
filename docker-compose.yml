@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 8500
+    volumes:
+      - .:/app
+    ports:
+      - "8500:8500"
+
+  test:
+    build: .
+    command: >
+      bash -c "python -m flake8 && python -m pytest --cov"
+    volumes:
+      - .:/app
