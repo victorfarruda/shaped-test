@@ -26,6 +26,11 @@ ou
 docker-compose build
 ```
 
+Rodar Migrations:
+```shell script
+docker-compose run web python manage.py migrate 
+```
+
 Você pode rodar o projeto:
 ```shell script
 docker-compose up -d web
